@@ -1,0 +1,23 @@
+<div class="model">
+<h4 class="field-label">{{{classname}}}</h4>
+{{#description}}</p>{{{.}}}</p>{{/description}}
+ {{#isEnum}}
+ Enumerate 
+ {{#allowableValues}}
+ <ul>
+ {{#values}}
+  <li><code>{{{.}}}</code></li>
+ {{/values}}
+ {{/allowableValues}}
+ {{/isEnum}}
+</ul>
+{{#vars}}
+<b><code>{{name}}</code>{{#required}}*{{/required}}</b>
+<ul>
+<li><b>Type</b>: <code>{{dataType}}</code></li>
+{{#minLength}}<li> <b>Min Length</b>: {{{.}}}</li>{{/minLength}}
+{{#maxLength}}<li> <b>Max Length</b>: {{{.}}}</li>{{/maxLength}}
+{{#description}}<li> <b>Notes</b>: {{{.}}}</li>{{/description}}
+</ul>
+{{/vars}}
+</div>

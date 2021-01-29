@@ -1,0 +1,79 @@
+<h4>{{name}}</h4>
+{{#unescapedDescription}}{{unescapedDescription}}{{/unescapedDescription}}
+
+
+{{^isEnum}}
+<table  border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+
+  <td width=106 valign=top style='width:79.35pt;border-top:solid #4472C4 1.0pt;
+  border-left:solid #4F81BD 1.0pt;border-bottom:solid #4472C4 1.0pt;border-right:
+  none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=NormalTextIndent align=left style='margin-top:6.0pt;margin-right:
+  0cm;margin-bottom:0cm;margin-left:0cm;text-align:left'>
+   <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Name</span></b></p>
+  </td>
+
+  </td>
+  <td width=122 valign=top style='width:99.25pt;border-top:solid #4472C4 1.0pt;
+  border-left:none;border-bottom:solid #4472C4 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Type</span></b></p>
+  </td>
+  <td width=122 valign=top style='width:99.25pt;border-top:solid #4472C4 1.0pt;
+  border-left:none;border-bottom:solid #4472C4 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Constraints</span></b></p>
+  </td>
+  <td width=215 valign=top style='width:181.05pt;border-top:solid #4472C4 1.0pt;
+  border-left:none;border-bottom:solid #4472C4 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Notes</span></b></p>
+  </td>
+ </tr>
+  {{#vars}}
+ <tr>
+  <td width=106 valign=top style='width:79.35pt;border:none;border-left:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+   <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB>{{name}}{{#required}}*{{/required}}</span></p>
+  </td>
+  <td width=122 valign=top style='width:99.25pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB>{{dataType}}</span></p>
+  </td>
+  <td width=122 valign=top style='width:99.25pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  {{#dataFormat}} <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB> <b>Format</b>: {{{.}}}</span></b></p>{{/dataFormat}}
+  {{#minLength}} <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB> <b>Min Length</b>: {{{.}}}</span></b></p>{{/minLength}}
+  {{#maxLength}} <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB> <b>Max Length</b>: {{{.}}}</span></b></p>{{/maxLength}}
+  </td>
+  <td width=225 valign=top style='width:151.05pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB>{{unescapedDescription}}</span></p>
+  </td>
+ </tr>
+{{/vars}}
+ <tr>
+  <td width=106 valign=top style='width:79.35pt;border:none;border-left:solid #4F81BD 1.0pt;border-bottom:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  </td>
+  <td width=122 valign=top style='width:99.25pt;border:none;border-bottom:solid #4F81BD 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  </td>
+  <td width=122 valign=top style='width:99.25pt;border:none;border-bottom:solid #4F81BD 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  </td>
+  <td width=215 valign=top style='width:151.05pt;border:none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  </td>
+ </tr>
+</table>
+{{/isEnum}}
+
+      {{#isEnum}}        
+        Enumeration
+         {{#allowableValues}}
+          <ul>
+           {{#values}}
+             <li>{{{.}}}</li>
+           {{/values}}
+          </ul>
+         {{/allowableValues}}
+        {{/isEnum}}

@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+  <head>
+    <style type="text/css">
+      {{>style.css}}
+    </style>
+  </head>
+  <body>
+  <h2>{{{appName}}} Service</h2>
+
+  {{#apiInfo}}
+  {{#apis}}
+  {{#operations}}
+  <h3><a name="{{baseName}}">{{baseName}}</a></h3>
+  {{#operation}}
+    <h4>{{nickname}}</h4>
+
+    <p>{{summary}}</p>
+
+<table  border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+
+ <tr>
+  <td width=92 valign=top style='width:69.25pt;border-top:solid #4F81BD 1.0pt;
+  border-left:solid #4F81BD 1.0pt;border-bottom:none;border-right:none;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  {{! <p class=NormalTextIndent align=left style='margin-top:6.0pt;margin-right:
+  0cm;margin-bottom:0cm;margin-left:0cm;text-align:left'><b><span lang=EN-GB>Verb</span></b></p> }}
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'><b><span lang=EN-GB>Verb</span></b></span></p>
+  </td>
+  <td width=474 colspan=3 valign=top style='width:355.45pt;border-top:solid #4F81BD 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'>{{#lambda.uppercase}} {{httpMethod}} {{/lambda.uppercase}}</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width=92 valign=top style='width:69.25pt;border-top:solid #4F81BD 1.0pt;
+  border-left:solid #4F81BD 1.0pt;border-bottom:solid #4F81BD 1.0pt;border-right:none;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  {{! <p class=NormalTextIndent align=left style='margin-top:6.0pt;margin-right:
+  0cm;margin-bottom:0cm;margin-left:0cm;text-align:left'><b><span lang=EN-GB>Path</span></b></p> }}
+   <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'><b><span lang=EN-GB>Path</span></b></span></p>
+  </td>
+  <td width=474 colspan=3 valign=top style='width:355.45pt;border-top:solid #4F81BD 1.0pt;
+  border-left:none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'>{{path}}</span></p>
+  </td>
+ </tr>
+
+{{#returnType}}
+<tr>
+  <td width=92 valign=top style='width:69.25pt;border-top:solid #4F81BD 1.0pt;
+  border-left:solid #4F81BD 1.0pt;border-bottom:solid #4F81BD 1.0pt;border-right:none;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  {{! <p class=NormalTextIndent align=left style='margin-top:6.0pt;margin-right:
+  0cm;margin-bottom:0cm;margin-left:0cm;text-align:left'><b><span lang=EN-GB>Return type</span></b></p> }}
+     <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'><b><span lang=EN-GB>Return type</span></b></span></p>
+  </td>
+  <td width=474 colspan=3 valign=top style='width:355.45pt;border-top:solid #4F81BD 1.0pt;
+  border-left:none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'>{{returnType}}</span></p>
+  </td>
+ </tr>
+ {{/returnType}}
+
+
+ {{#hasPathParams}}
+ <tr>
+  <td width=566 colspan=4 valign=top style='width:424.7pt;border:solid #4F81BD 1.0pt;
+  border-bottom:none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  {{! <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB
+  style='color:black'>Path Parameters</span></b></p> }}
+    <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'><b><span lang=EN-GB>Path Parameters</span></b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=92 valign=top style='width:69.25pt;border:none;border-left:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=NormalTextIndent align=left style='margin-top:6.0pt;margin-right:
+  0cm;margin-bottom:0cm;margin-left:0cm;text-align:left'><b><span lang=EN-GB>&nbsp;</span></b></p>
+  </td>
+  <td width=106 valign=top style='width:79.35pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Name</span></b></p>
+  </td>
+  <td width=113 valign=top style='width:3.0cm;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Type </span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.05pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+ </tr>
+  {{#pathParams}}{{>pathParam}}{{/pathParams}}
+{{/hasPathParams}}
+ {{#hasQueryParams}}
+ <tr>
+  <td width=566 colspan=4 valign=top style='width:424.7pt;border:solid #4F81BD 1.0pt;
+  border-bottom:none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  {{! <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB
+  style='color:black'>Query Parameters</span></b></p> }}
+      <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'><b><span lang=EN-GB>Query Parameters</span></b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=92 valign=top style='width:69.25pt;border:none;border-left:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=NormalTextIndent align=left style='margin-top:6.0pt;margin-right:
+  0cm;margin-bottom:0cm;margin-left:0cm;text-align:left'><b><span lang=EN-GB>&nbsp;</span></b></p>
+  </td>
+  <td width=106 valign=top style='width:79.35pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Name</span></b></p>
+  </td>
+  <td width=113 valign=top style='width:3.0cm;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Type </span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.05pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+ </tr>
+{{#queryParams}}{{>queryParam}}{{/queryParams}}
+{{/hasQueryParams}}
+
+{{#hasBodyParam}}
+ <tr>
+  <td width=566 colspan=4 valign=top style='width:424.7pt;border:solid #4F81BD 1.0pt;
+  border-bottom:none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  {{! <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB
+  style='color:black'>Body Parameters</span></b></p> }}
+
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'><b><span lang=EN-GB>Body Parameters</span></b></span></p>  
+  </td>
+ </tr>
+ <tr>
+  <td width=92 valign=top style='width:69.25pt;border:none;border-left:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=NormalTextIndent align=left style='margin-top:6.0pt;margin-right:
+  0cm;margin-bottom:0cm;margin-left:0cm;text-align:left'><b><span lang=EN-GB>&nbsp;</span></b></p>
+  </td>
+  <td width=106 valign=top style='width:79.35pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB></span></b></p>
+  </td>
+  <td width=113 valign=top style='width:3.0cm;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Type </span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.05pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+ </tr>
+ {{#bodyParams}}{{>bodyParam}}{{/bodyParams}}
+ {{/hasBodyParam}}
+
+ <tr>
+  <td width=566 colspan=4 valign=top style='width:424.7pt;border:solid #4F81BD 1.0pt;
+  border-bottom:none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  {{! <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB
+  style='color:black'>Responses</span></b></p> }}
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-GB
+  style='color:black'><b><span lang=EN-GB>Responses</span></b></span></p>  
+  </td>
+ </tr>
+ <tr>
+  <td width=92 valign=top style='width:69.25pt;border:none;border-left:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=NormalTextIndent align=left style='margin-top:6.0pt;margin-right:
+  0cm;margin-bottom:0cm;margin-left:0cm;text-align:left'><b><span lang=EN-GB>&nbsp;</span></b></p>
+  </td>
+  <td width=106 valign=top style='width:79.35pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>HttpCode</span></b></p>
+  </td>
+  <td width=113 valign=top style='width:3.0cm;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Type </span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.05pt;border:none;border-right:solid #4F81BD 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+ </tr>
+ {{#responses}}{{>response}}{{/responses}}
+
+ <tr>
+  <td width=92 valign=top style='width:69.25pt;border:none;border-left:solid #4F81BD 1.0pt;border-bottom:solid #4F81BD 1.0pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+  </td>
+  <td width=106 valign=top style='width:79.35pt;border:none;border-bottom:solid #4F81BD 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  </td>
+  <td width=113 valign=top style='width:3.0cm;border:none;border-bottom:solid #4F81BD 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  </td>
+  <td width=255 valign=top style='width:191.05pt;border:none;border-bottom:solid #4F81BD 1.0pt;border-right:solid #4F81BD 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  </td>
+ </tr>
+
+</table>
+  {{/operation}}
+  {{/operations}}
+  {{/apis}}
+  {{/apiInfo}}
+
+
+<h3>Models</h3>
+{{#models}}
+{{#model}}{{>model}}{{/model}}
+{{/models}}
+</body>
+</html>
